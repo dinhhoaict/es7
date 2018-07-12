@@ -1,0 +1,36 @@
+{
+	"name": "es72",
+	"version": "0.0.0",
+	"private": true,
+	"main": "build/bin/www",
+	"engines": {
+		"node": "~6.9.1",
+		"npm": ">=3.10.0"
+	},
+	"scripts": {
+		"prestart": "npm run -s build",
+		"start": "node build/bin/www",
+		"dev": "nodemon src/bin/www --exec \"node -r dotenv/config -r babel-register\"",
+		"clean": "rimraf build",
+		"build": "npm run clean && mkdir -p build && babel src -s -D -d build",
+		"test": "jest --watch",
+		"lint": "esw -w src test"
+	},
+	"keywords": [],
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"cookie-parser": "~1.4.3",
+		"debug": "~2.6.9",
+		"dotenv": "^6.0.0",
+		"ejs": "~2.5.7",
+		"eslint": "^5.1.0",
+		"express": "~4.16.0",
+		"http-errors": "~1.6.2",
+		"morgan": "~1.9.0",
+		"rimraf": "^2.6.2"
+	},
+	"devDependencies": {
+		"babel-plugin-transform-async-to-generator": "^6.24.1"
+	}
+}
