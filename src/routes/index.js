@@ -1,6 +1,5 @@
 "use strict";
 import { Router } from 'express';
-// var Test = require("../utils/test");
 import {Test} from "../utils/test";
 var router = Router();
 
